@@ -1,0 +1,38 @@
+{% extends 'base_step.html' %} {% block title %} Conociendote {% endblock %} {%block content %}
+<form id="process-form">
+  <div class="row justift-content-center">
+    <div class="col-sm-12">
+      <h4>En que parte del proceso te encuentras?</h4>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg btn-block"
+      onclick="window.location.href='{% url 'steps' 1 %}'"
+    >
+      Ya firmé Minuta
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg btn-block"
+      onclick="window.location.href='{% url 'steps' 1 %}'"
+    >
+      He separado un departamento
+    </button>
+    <button
+      type="button"
+      class="btn btn-secondary btn-lg btn-block"
+      onclick="window.location.href='{% url 'steps' 1 %}'"
+    >
+      Estoy empezando a buscar
+    </button>
+  </div>
+</form>
+<script>
+  function handleOptionClick(option) {
+    window.location.href = "/steps/1";
+  }
+</script>
+{% endblock %}

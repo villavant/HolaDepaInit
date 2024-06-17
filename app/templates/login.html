@@ -1,0 +1,11 @@
+{% extends 'base_main.html' %} {% block title %}Login HolaDepa{% endblock %} {%block content %}
+<div class="container mt-4">
+  <h2>Login con Google</h2>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-primary">
+      Iniciar sesión con Google
+    </button>
+  </form>
+</div>
+{% endblock %}

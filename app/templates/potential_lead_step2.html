@@ -1,0 +1,60 @@
+{% extends 'base_potential_lead_steps.html' %} {% block title %}HolaDepa -Workflow 2 - step 2 {% endblock %} {% block content %}
+<h3>Detalles del Crédito que quieres solicitar</h3>
+<!-- <p>Conoce los requisitos:</p> -->
+<div class="container border p-4">
+  <form action="{% url 'base_lead_step' 3 %}" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="total_cost_department">Valor del inmueble:</label>
+        <input class="form-control" type="text" placeholder="" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="payment_initial">Inicial con la que cuentas:</label>
+        <input class="form-control" type="text" placeholder="" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="payment_time">¿En cuanto tiempo lo quiere pagar?</label>
+        <select class="form-control">
+          <option>10 años</option>
+          <option>15 años</option>
+          <option>20 años</option>
+          <option>25 años</option>
+          <option>30 años</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="flexSwitchCheckDefault"
+          />
+          <label class="form-check-label" for="flexSwitchCheckDefault"
+            >¿Tienes una vivienda actualmente a tu nombre?</label
+          >
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="payment_time">Beneficios del Estado:</label>
+        <select class="form-control">
+          <option>MiVivienda</option>
+          <option>MiVivienda Sostenible</option>
+          <option>TechoPropio</option>
+          <option>No lo sé</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Continuar</button>
+  </form>
+</div>
+
+{% endblock %}

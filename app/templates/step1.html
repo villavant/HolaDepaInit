@@ -1,0 +1,79 @@
+{% extends 'base_step.html' %} {% block title %}Hola Depa Step 1{% endblock %}{% block stepCount %}
+<div class="form-header">
+  <h1>Paso 1 de 4</h1>
+  <div class="progress">
+    <div
+      class="progress-bar"
+      role="progressbar"
+      ,
+      style="width: 25%"
+      aria-valuenow="25"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    ></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
+<form action="{% url 'steps' 2 %}" method="POST">
+  {% csrf_token %}
+  <h4>Conozcámonos un poco más</h4>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="total_cost_department">Valor del departamento:</label>
+      <input class="form-control" type="number" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="payment_initial">Inicial con la que cuentas:</label>
+      <input class="form-control" type="number" />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="payment_time">¿En cuanto tiempo lo quiere pagar?</label>
+      <select class="form-control">
+        <option>10 años</option>
+        <option>15 años</option>
+        <option>20 años</option>
+        <option>25 años</option>
+        <option>30 años</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="moving_time">¿En cuanto tiempo de gustaria mudarte?</label>
+      <select class="form-control">
+        <option>1 mes</option>
+        <option>3 meses</option>
+        <option>6 meses</option>
+        <option>1 año</option>
+        <option>No lo sé</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >¿Tienes una vivienda actualmente a tu nombre?</label
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="form-row justify-content-end">
+    <div class="form-group col-md-2">
+      <button type="submit" class="btn btn-primary">Continuar</button>
+    </div>
+  </div>
+</form>
+
+{% endblock %}

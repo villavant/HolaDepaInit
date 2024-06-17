@@ -1,0 +1,57 @@
+{% extends 'base_potential_lead_steps.html' %} {% block title %}HolaDepa - Workflow 2 - step 5 {% endblock %} {% block content %}
+<h3>Información laboral</h3>
+<p>Completa tus datos laborales para poder conocerte mejor.</p>
+<div class="container border p-4">
+  <form action="{% url 'base_lead_step' 6 %}" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="job_type">Trabaja de forma:</label>
+        <select class="form-control">
+          <option>Dependiente</option>
+          <option>Independiente</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="amount_neto">Ingreso mensual neto:</label>
+        <input class="form-control" type="number" placeholder="" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="amount_neto">Bono o ingresos adicionales:</label>
+        <input class="form-control" type="number" placeholder="" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="frequency_amount">Frecuencia de ingresos:</label>
+        <select class="form-control">
+          <option>Mensual</option>
+          <option>Quincenal</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="bank_entity"
+          >¿En que entidad financiera recibes tus ingresos?</label
+        >
+        <select class="form-control">
+          <option>BCP</option>
+          <option>BBVA</option>
+          <option>Scotiabank</option>
+          <option>Interbank</option>
+          <option>Banco Pichincha</option>
+          <option>Banbif</option>
+          <option>No recibo ingreso en una entidad financiera</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Continuar</button>
+  </form>
+</div>
+
+{% endblock %}

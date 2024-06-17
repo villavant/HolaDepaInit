@@ -1,0 +1,76 @@
+{% extends 'base_potential_lead_steps.html' %} {% block title %}HolaDepa -Workflow 2 - step 4 {% endblock %} {% block content %}
+<h3>Cuéntanos sobre ti.</h3>
+<p>Con tus datos personales podremos validar tu identidad.</p>
+<div class="container border p-4">
+  <form action="{% url 'base_lead_step' 5 %}" method="POST">
+    {% csrf_token %}
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="first_name">Primer nombre:</label>
+        <input class="form-control" type="text" placeholder="" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="second_name">Segundo nombre:</label>
+        <input class="form-control" type="text" placeholder="" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="middle_name">Apellido paterno:</label>
+        <input class="form-control" type="text" placeholder="" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="last_name">Apellido materno:</label>
+        <input class="form-control" type="text" placeholder="" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="">Fecha de nacimiento:</label>
+        <input class="form-control" type="date" placeholder="DD/MM/AAAA" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="">Género:</label>
+        <select class="form-control">
+          <option>Másculino</option>
+          <option>Femenino</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="">Nacionalidad:</label>
+        <select class="form-control">
+          <option>Peruana</option>
+          <option>Extranjero/a residente</option>
+          <option>Extranjero/a no residente</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="document_id">DNI/CE/Pasaporte:</label>
+        <input class="form-control" type="number" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="email">Email:</label>
+        <input class="form-control" type="email" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="phone_number">Numero celular:</label>
+        <input class="form-control" type="tel" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Continuar</button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base_potential_lead_steps.html' %} {% block title %}HolaDepa - Workflow 2 - step 3 {% endblock %} {% block content %}
+<h3>Validación de identidad.</h3>
+<p>Verifica tu número de celular para continuar con el proceso</p>
+<div class="container border p-4">
+  <form action="{% url 'start_current_state' %}" method="POST">
+    {% csrf_token %}
+    <p>Información legal</p>
+    <p>Estamos analizando tu información</p>
+    <p>Logos de banco</p>
+    <button type="submit" class="btn btn-primary">Terminar</button>
+  </form>
+</div>
+
+{% endblock %}

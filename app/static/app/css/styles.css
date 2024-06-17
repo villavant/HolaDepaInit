@@ -1,0 +1,81 @@
+.logo-small {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f3f4f6;
+}
+
+.logo {
+    height: 50px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    margin-right: 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-button {
+    background-color: #0052cc;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 70px);
+    background-color: #1e1e70;
+    color: white;
+    text-align: center;
+}
+
+.hero {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    background-color: #afff00;
+    color: #1e1e70;
+    padding: 15px 30px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,0 +1,58 @@
+{% extends 'base_step.html' %} {% block title %}HolaDepa verificación de código{% endblock %} {% block content %}
+<h1>Verifica que eres tú</h1>
+<p>
+  Para continuar, ingresa el código de verificación que enviamos a {{usuario}}
+</p>
+<form action="{% url 'base_lead_step' 1 %}" method="post">
+  {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="last_name">Ingresa el código:</label>
+      <input class="form-control" type="text" placeholder="" />
+    </div>
+  </div>
+  <div class="form-row justify-content-end">
+    <div class="form-group col-md-2">
+      <button type="submit" class="btn btn-primary">Verificar</button>
+    </div>
+  </div>
+</form>
+<!-- <script>
+        function generateVerificationCode() {
+            var email = document.getElementById("email").value;
+            if (!email) {
+                alert("Please enter your email");
+                return;
+            }
+            fetch('/api/generate-code/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.success))
+            .catch(error => console.error('Error:', error));
+        }
+
+        function verifyCode() {
+            var email = document.getElementById("email").value;
+            var code = document.getElementById("code").value;
+            if (!email || !code) {
+                alert("Please enter your email and verification code");
+                return;
+            }
+            fetch('/api/verify-code/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email: email, code: code })
+            })
+            .then(response => response.json())
+            .then(data => alert(data.success))
+            .catch(error => console.error('Error:', error));
+        }
+    </script> -->
+{% endblock %}
