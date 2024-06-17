@@ -10,5 +10,4 @@ urlpatterns = [
     path('verification_code', verification_code, name ="verification_code"),
     path('verify_code', verify_code, name ="verify_code"),
     path('base_lead_step/<int:code>/', base_lead_step, name="base_lead_step"),
-
 ]

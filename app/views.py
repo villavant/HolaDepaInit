@@ -1,12 +1,14 @@
 from django.shortcuts import render
-
+from app.models import Current_Status,User,Salary,CreditDepartment,Address,ValidationCode,Form 
 # Create your views here.
 
 def home(request):
     return render(request, "home.html")
 
 def start_current_state(request):
-    return render(request, 'current_State.html')
+    current_status_list = Current_Status.objects.order_by("value")
+    current_status_dict = {'current_status_list': current_status_list}
+    return render(request, 'current_State.html', context=current_status_dict)
     
 def start_login(request):
     return render(request, 'login.html')
